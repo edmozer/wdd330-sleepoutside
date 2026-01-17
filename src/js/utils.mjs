@@ -21,3 +21,27 @@ export function setClick(selector, callback) {
   });
   qs(selector).addEventListener("click", callback);
 }
+
+export function getCartItemCount(key = "so-cart") {
+  const cart = getLocalStorage(key) || [];
+  if (!Array.isArray(cart)) return 0;
+
+  return cart.reduce((sum, item) => {
+    const qty = Number(item.Quantity ?? item.quantity ?? 1);
+    return sum + (Number.isFinite(qty) ? qty : 1);
+  }, 0);
+}
+
+export function updateCartBadge(badgeId = "cartBadge", key = "so-cart") {
+  const badge = document.getElementById(badgeId);
+  if (!badge) return;
+
+  const count = getCartItemCount(key);
+  if (count > 0) {
+    badge.textContent = String(count);
+    badge.style.display = "inline-block";
+  } else {
+    badge.textContent = "";
+    badge.style.display = "none";
+  }
+}

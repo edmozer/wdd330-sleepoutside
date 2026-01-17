@@ -1,6 +1,6 @@
 :root {
   --font-body: Arial, Helvetica, sans-serif;
-  --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  --font-headline: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   /* colors */
   --primary-color: #f0a868;
   --secondary-color: #525b0f;
@@ -129,6 +129,22 @@ button {
 
 .cart:hover svg {
   fill: gray;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  background: #d00;
+  color: #fff;
+  display: none;
 }
 
 /* End cart icon styles */
