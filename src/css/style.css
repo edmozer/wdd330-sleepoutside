@@ -193,6 +193,26 @@ button {
   max-width: 250px;
 }
 
+.product-card a {
+  display: block;
+  position: relative;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--secondary-color);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
 .product-card h2,
 .product-card h3,
 .product-card p {
