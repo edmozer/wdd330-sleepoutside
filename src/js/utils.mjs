@@ -38,10 +38,13 @@ export function updateCartBadge(badgeId = "cartBadge", key = "so-cart") {
 
   const count = getCartItemCount(key);
   if (count > 0) {
-    badge.textContent = String(count);
+    // show count as a superscript for better visuals
+    badge.innerHTML = `<sup>${count}</sup>`;
+    badge.setAttribute('aria-label', `${count} items in cart`);
     badge.style.display = "inline-block";
   } else {
-    badge.textContent = "";
+    badge.innerHTML = "";
+    badge.removeAttribute('aria-label');
     badge.style.display = "none";
   }
 }

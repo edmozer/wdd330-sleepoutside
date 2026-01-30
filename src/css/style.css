@@ -142,9 +142,18 @@ button {
   font-size: 12px;
   line-height: 18px;
   text-align: center;
-  background: #d00;
+  background: #ff6f3c;
   color: #fff;
   display: none;
+}
+
+/* make the number appear superscripted and slightly smaller */
+.cart-badge sup {
+  font-size: 0.65em;
+  vertical-align: super;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(-3px);
 }
 
 /* End cart icon styles */
